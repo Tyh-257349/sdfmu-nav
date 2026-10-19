@@ -23,7 +23,7 @@ export default function Home({ onOpenSearch }: { onOpenSearch: (query?: string) 
     <section className="welcome" aria-labelledby="home-title"><div className="welcome-copy">
       <span className="welcome-university">山东第一医科大学</span>
       <h1 id="home-title">山一大导航</h1>
-      <p>山东第一医科大学学生自制导航：校内服务、校外资源、最新动态，一站直达。</p>
+      <p>乐心e站 · 红魂培育坊学生自制导航：校内服务、校外资源、最新动态，一站直达。</p>
       <div className="hero-search-area"><button className="hero-search" onClick={() => onOpenSearch()}><Search size={21} /><span>搜索校内 / 校外功能…</span><kbd>Ctrl K</kbd><span className="search-submit" aria-hidden="true"><ArrowUpRight size={20} /></span></button><div className="search-suggestions"><span>常用搜索</span>{['成绩', '选课', '知网', '座位预约'].map((query) => <button key={query} onClick={() => onOpenSearch(query)}>{query}</button>)}</div></div>
     </div><div className="university-imprint" aria-label="校训：跬步千里 · 止于至善"><div className="imprint-orbit" aria-hidden="true"><img src={emblem} alt="" /></div><p>跬步千里 · 止于至善</p><span>Shandong First Medical University</span></div></section>
 
