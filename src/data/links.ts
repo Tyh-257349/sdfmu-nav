@@ -267,9 +267,9 @@ export const campusGroups: LinkGroup[] = [
       {
         id: 'wx-lexin',
         name: '乐心e站',
-        desc: '工作室公众号（二维码待补充）',
+        desc: '医学信息与人工智能学院工作室公众号',
         url: null,
-        note: '二维码获取后可在「自定义」设置中补充图片',
+        note: '微信搜索公众号「乐心e站」关注',
         tags: ['公众号', '微信', '工作室', '乐心e站'],
       },
     ],
