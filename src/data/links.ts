@@ -1,6 +1,7 @@
 // 链接数据：全部来自山东第一医科大学官网实际入口（2026-10 核实）
 import qrOfficial from '@/assets/qr-official-code.jpg'
 import qrCollege from '@/assets/qr-college.jpg'
+import qrLexin from '@/assets/qr-lexin.jpg'
 
 export interface LinkItem {
   id: string
@@ -269,6 +270,7 @@ export const campusGroups: LinkGroup[] = [
         name: '乐心e站',
         desc: '医学信息与人工智能学院工作室公众号',
         url: null,
+        qr: qrLexin,
         note: '微信搜索公众号「乐心e站」关注',
         tags: ['公众号', '微信', '工作室', '乐心e站'],
       },
