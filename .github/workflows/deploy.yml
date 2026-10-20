@@ -3,6 +3,11 @@ name: 部署到 GitHub Pages
 on:
   push:
     branches: [main]
+  # 抓取任务用 GITHUB_TOKEN 推送的数据提交不会触发 push 事件，
+  # 用 workflow_run 在抓取完成后接力部署
+  workflow_run:
+    workflows: ["抓取最新公告"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -15,6 +20,7 @@ concurrency:
 
 jobs:
   build:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
