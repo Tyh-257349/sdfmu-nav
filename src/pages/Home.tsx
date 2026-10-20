@@ -21,7 +21,6 @@ export default function Home({ onOpenSearch }: { onOpenSearch: (query?: string) 
   const campusLinks = campusGroups.flatMap((group) => group.links)
   return <div className="home-page">
     <section className="welcome" aria-labelledby="home-title"><div className="welcome-copy">
-      <span className="welcome-university">山东第一医科大学</span>
       <h1 id="home-title">医小智学途导航</h1>
       <p>一站式校内学习生活导航站 · 乐心e站 · 红魂培育坊学生自制</p>
       <div className="hero-search-area"><button className="hero-search" onClick={() => onOpenSearch()}><Search size={21} /><span>搜索校内 / 校外功能…</span><kbd>Ctrl K</kbd><span className="search-submit" aria-hidden="true"><ArrowUpRight size={20} /></span></button><div className="search-suggestions"><span>常用搜索</span>{['成绩', '选课', '知网', '座位预约'].map((query) => <button key={query} onClick={() => onOpenSearch(query)}>{query}</button>)}</div></div>
