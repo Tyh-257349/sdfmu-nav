@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import CategoryCard from '@/components/CategoryCard'
 import LivePreviewCard from '@/components/LivePreviewCard'
 import { campusGroups, outsideGroups } from '@/data/links'
-import emblem from '@/assets/emblem_purple.png'
+import yxzWave from '@/assets/yxz-wave.gif'
 
 const quickIds = ['portal', 'jwc', 'lib', 'mail', 'network', 'pay']
 const quickIcons = [GraduationCap, CalendarDays, LibraryBig, Mail, Network, WalletCards]
@@ -22,10 +22,10 @@ export default function Home({ onOpenSearch }: { onOpenSearch: (query?: string) 
   return <div className="home-page">
     <section className="welcome" aria-labelledby="home-title"><div className="welcome-copy">
       <span className="welcome-university">山东第一医科大学</span>
-      <h1 id="home-title">山一大学途导航</h1>
+      <h1 id="home-title">医小智学途导航</h1>
       <p>一站式校内学习生活导航站 · 乐心e站 · 红魂培育坊学生自制</p>
       <div className="hero-search-area"><button className="hero-search" onClick={() => onOpenSearch()}><Search size={21} /><span>搜索校内 / 校外功能…</span><kbd>Ctrl K</kbd><span className="search-submit" aria-hidden="true"><ArrowUpRight size={20} /></span></button><div className="search-suggestions"><span>常用搜索</span>{['成绩', '选课', '知网', '座位预约'].map((query) => <button key={query} onClick={() => onOpenSearch(query)}>{query}</button>)}</div></div>
-    </div><div className="university-imprint" aria-label="智启学风 思育青年"><div className="imprint-orbit" aria-hidden="true"><img src={emblem} alt="" /></div><p>智启学风 思育青年</p><span>Shandong First Medical University</span></div></section>
+    </div><div className="university-imprint" aria-label="智启学风 思育青年"><div className="imprint-orbit" aria-hidden="true"><img src={yxzWave} alt="" /></div><p>智启学风 思育青年</p><span>Shandong First Medical University</span></div></section>
 
     <section className="primary-portals" aria-label="导航分类">
       <CategoryCard info={{ id: 'campus', title: '校内服务', subtitle: 'Campus', desc: '学习必备、校园生活、发展就业、资讯通知、公众号专区', count: campusCount }} to="/campus" />

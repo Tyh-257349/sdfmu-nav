@@ -36,7 +36,7 @@ export default function App() {
           <Route path="/outside/:groupId" element={<GroupPage key="outside" scope="outside" />} />
         </Routes>
       </main>
-      <footer className="site-footer"><div><Link to="/">山一大学途导航</Link><span>乐心e站 · 红魂培育坊学生自制导航</span></div><p>跬步千里 · 止于至善</p></footer>
+      <footer className="site-footer"><div><Link to="/">医小智学途导航</Link><span>乐心e站 · 红魂培育坊学生自制导航</span></div><p>智启学风 思育青年</p></footer>
       {search && <SearchDialog open onOpenChange={(open) => { if (!open) setSearch(null) }} initialQuery={search.query} />}
     </div>
   )
