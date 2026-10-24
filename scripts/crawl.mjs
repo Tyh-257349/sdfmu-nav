@@ -9,10 +9,25 @@ const outDir = new URL('../public/api/', import.meta.url)
 await mkdir(outDir, { recursive: true })
 
 let failed = 0
+
+// 校园网 DNS 不稳定：失败时等 2s/4s 重试，共 3 次
+async function withRetry(fn, tries = 3) {
+  let last
+  for (let i = 0; i < tries; i++) {
+    try {
+      return await fn()
+    } catch (err) {
+      last = err
+      if (i < tries - 1) await new Promise((r) => setTimeout(r, 2000 * (i + 1)))
+    }
+  }
+  throw last
+}
+
 for (const [name, fetcher] of Object.entries(FETCHERS)) {
   const file = new URL(`${name}.json`, outDir)
   try {
-    const data = await fetcher()
+    const data = await withRetry(fetcher)
     await writeFile(
       file,
       JSON.stringify({ ok: true, time: new Date().toISOString(), data }),
